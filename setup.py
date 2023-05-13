@@ -3,7 +3,7 @@ import codecs
 import os
 
 
-VERSION = '0.1.2'
+VERSION = '0.1.3'
 DESCRIPTION = 'Special AI/ML library for autonomous vehicles and underwater systems'
 LONG_DESCRIPTION = 'A package that allows to build AI/ML models for manage self-driving cars' \
                    ' and images processing tools.'
