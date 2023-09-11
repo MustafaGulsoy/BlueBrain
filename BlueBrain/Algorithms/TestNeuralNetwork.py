@@ -4,7 +4,7 @@ import random
 import sys
 from math import e
 import numpy as np
-
+from ..Entity.Layer import Layer
 
 def updt(total, progress):
     """
@@ -30,15 +30,13 @@ def sigmoid_function(x):
 
 class NeuralNetwork:
     # Setting neural network values.
-    def __init__(self, input_layer_size, secret_layer_size, secret_layer_count, generation_count):
-        self.secret_layer_count = secret_layer_count
-        self.secret_layer_size = secret_layer_size
-        self.input_layer_size = input_layer_size
-        self.network_weight = []
-        self.generation_count = generation_count
-        self.generation_weight = secret_layer_size * secret_layer_size * (
-                secret_layer_count - 1) + input_layer_size * secret_layer_size
-        self.model_path = os.getcwd()
+    def __init__(self):
+        pass
+
+    def Sequential(self,layers):
+        self.layers = layers
+
+
 
     # create network weights and prepare training data
     def set_up(self):
@@ -89,7 +87,6 @@ class NeuralNetwork:
                                                                                5) / 100)
 
         return new_data
-
     # parse train data for train ML model.
     def split_data(self):
         for generation in range(self.generation_count):
@@ -245,3 +242,9 @@ class NeuralNetwork:
             if self.input_layer_size != len(input_x[0]):
                 return True
             return False
+
+
+input_size = 32
+output_size = 64
+activator_function: str
+ly = Layer()
